@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-/render/tailscaled --tun=userspace-networking --socks5-server=localhost:1055 &
+/render/tailscaled --tun=userspace-networking --socks5-server=0.0.0.0:1055 &
 PID=$!
 
 until /render/tailscale up --authkey="${TAILSCALE_AUTHKEY}" --hostname="${RENDER_SERVICE_NAME}" --accept-routes; do
